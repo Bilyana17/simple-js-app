@@ -1,6 +1,4 @@
 //Creating variables
-let pokemonList = [];
-pokemonList = [{ name: "balbasure", height: 7, type: ["grass", "poison"] }, { name: "butterfree", height: 1, type: ["bug", "flying"] }, { name: "onix", height: 8, type: ["rock", "ground"] }];
 
 let pokemonList = [
     {
@@ -20,12 +18,15 @@ let pokemonList = [
     }
 ];
 
-for (let i = 0, 1 < pokemonList.lenght; i++) {
-    if (pokemonList[i].height < 8 && pokemonList[i].height > 5) {
-        console.log(pokemonList[i].height + "It's turtule");
-    } else if (pokemonList[i].height < 5) {
-        console.log(pokemonList[i].height + "It's bug");
+for (let i = 0; 1 < pokemonList.length; i++) {
+    let displayText = pokemonList[i].name + " (height: " + pokemonList[i].height + ")";
+    if (pokemonList[i].height > 7) {
+        displayText += " - It's a bug!";
+    } else if (pokemonList[i].height === 7) {
+        displayText += " - It's a turtule!";
     } else {
-        console.log(pokemonList[i].height + "I's a rock")
+        displayText += " - It's a rock!"
     }
+
+    document.write(displayText + "<br>");
 }
