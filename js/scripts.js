@@ -18,7 +18,7 @@ let pokemonList = [
     }
 ];
 
-for (let i = 0; 1 < pokemonList.length; i++) {
+/*for (let i = 0; 1 < pokemonList.length; i++) {
     let displayText = pokemonList[i].name + " (height: " + pokemonList[i].height + ")";
     if (pokemonList[i].height > 7) {
         displayText += " - It's a bug!";
@@ -29,4 +29,8 @@ for (let i = 0; 1 < pokemonList.length; i++) {
     }
 
     document.write(displayText + "<br>");
-}
+}*/
+
+pokemonList.forEach(function (user) {
+    console.log(user.name + '  ' + user.height + '  ' + user.type);
+});
