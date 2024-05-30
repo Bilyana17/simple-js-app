@@ -1,6 +1,5 @@
-//Creating variables
+//Creating the repository with IIFE
 let pockemonRepository = (function () {
-
     let pokemonList = [
         {
             name: "balbasura",
@@ -19,33 +18,36 @@ let pockemonRepository = (function () {
         }
     ];
 
-    /*for (let i = 0; 1 < pokemonList.length; i++) {
-        let displayText = pokemonList[i].name + " (height: " + pokemonList[i].height + ")";
-        if (pokemonList[i].height > 7) {
-            displayText += " - It's a bug!";
-        } else if (pokemonList[i].height === 7) {
-            displayText += " - It's a turtule!";
-        } else {
-            displayText += " - It's a rock!"
-        }
-    
-        document.write(displayText + "<br>");
-    }*/
-
+    //Function to get all Pokemon
     function getAll() {
         return pokemonList;
     }
+
+    //Function to add a Pokemon
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
+
+    //Returning the methods as public interface
     return {
-        getAll,
+        getAll: getAll,
         add: add
-    }
+    };
 })();
 
-console.log(pockemonRepository.getAll());
+// Using the getAll method to get the list and forEach to print details
 
-pokemonList.forEach(function (user) {
-    console.log(user.name + '  ' + user.height + '  ' + user.type);
+pockemonRepository.getAll().forEach(function(pokemon) {
+    let displayText = pokemon.name + " (height: " + pokemon.height + ")";
+    if (pokemon.height > 7) {
+        displayText += " - It's a bug!";
+    } else if (pokemon.height === 7) {
+        displayText += " - It's a turtule!";
+    } else {
+        displayText += " - It's a rock!"
+    }
+
+    //Using document.write to display the text on the webpage   
+    document.write(displayText + "<br>");
 });
+
