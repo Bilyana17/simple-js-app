@@ -2,17 +2,17 @@
 let pockemonRepository = (function () {
     let pokemonList = [
         {
-            name: "balbasura",
+            name: "Balbasura",
             height: 7,
             type: ["grass", "poison"]
         },
         {
-            name: "butterfree",
+            name: "Butterfree",
             height: 1,
             type: ["bug", "flying"]
         },
         {
-            name: "onix",
+            name: "Onix",
             height: 8,
             type: ["rock", "ground"]
         }
@@ -23,6 +23,29 @@ let pockemonRepository = (function () {
         return pokemonList;
     }
 
+    //Function to show details
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
+
+    //Function to all evenent listener
+    function onClick(button, pokemon) {
+        button.addEventListener('click', function (event) {
+            pockemonRepository.showDetails(pokemon);
+        });
+    }
+
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector(".pokemon-list");
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add("button-class");
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem);
+        onClick(button, pokemon);
+    }
+
     //Function to add a Pokemon
     function add(pokemon) {
         pokemonList.push(pokemon);
@@ -31,23 +54,16 @@ let pockemonRepository = (function () {
     //Returning the methods as public interface
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem,
+        showDetails: showDetails
     };
 })();
 
 // Using the getAll method to get the list and forEach to print details
 
-pockemonRepository.getAll().forEach(function(pokemon) {
-    let displayText = pokemon.name + " (height: " + pokemon.height + ")";
-    if (pokemon.height > 7) {
-        displayText += " - It's a bug!";
-    } else if (pokemon.height === 7) {
-        displayText += " - It's a turtule!";
-    } else {
-        displayText += " - It's a rock!"
-    }
+pockemonRepository.getAll().forEach(function (pokemon) {
+    pockemonRepository.addListItem(pokemon);
 
-    //Using document.write to display the text on the webpage   
-    document.write(displayText + "<br>");
 });
 
