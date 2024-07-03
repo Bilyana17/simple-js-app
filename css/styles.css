@@ -1,6 +1,10 @@
+h1 {
+    font-weight: 700;
+    color: #af4c9d;
+}
+
 .button-class {
     background-color: #af4c9d;
-    /* Green */
     border: none;
     color: white;
     padding: 16px 32px;
