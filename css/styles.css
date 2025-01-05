@@ -1,9 +1,57 @@
-.navbar {
-    background-color: #eeebfa;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.btn-outline-primary {
+    width: 400px;
+    background-color: #f8fcfc;
+    text-transform: capitalize; 
+    font-weight: 400;
+    color: #4682b4;
+    border-color: #4682b4;
 }
+
+.btn-outline-primary:hover {
+    background-color: #4682b4;
+}
+
+a {
+    color: #4682b4;
+}
+
+.navbar {
+    background-color: #e9f9f9;
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 32px;
+    font-style: normal;
+    color: #4682b4;
+}
+
+.navbar-toggler {
+    color: #4682b4;
+}
+
 
 .nav-link {
     color: #1f1f1f;
 }
 
+
+.pokemon-list {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-text {
+    padding: 80px 0 20px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: #4682b4;
+}

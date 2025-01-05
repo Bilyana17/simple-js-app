@@ -1,11 +1,8 @@
-//Creating the repository with IIFE
+// Creating repository with IIFE
 let pockemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-    //function add(pokemon) {
-    //   pokemonList.push(pokemon)
-    //}
 
     //Function to add a Pokemon
     function add(pokemon) {
@@ -25,17 +22,6 @@ let pockemonRepository = (function () {
         return pokemonList;
     }
 
-    //Function to show details
-    //function showDetails(pokemon) {
-    //  console.log(pokemon);
-    //}
-
-    //Function to all evenent listener
-    //function onClick(button, pokemon) {
-    //button.addEventListener('click', function (event) {
-    // pockemonRepository.showDetails(pokemon);
-    //});
-    //}
 
     //Function to addListItem
     function addListItem(pokemon) {
